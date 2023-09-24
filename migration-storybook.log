@@ -1,0 +1,134 @@
+🔎 checking possible migrations..
+WARN Multiple main files found in your configDir (/Users/kojiroohara/Documents/jest/.storybook).
+WARN Storybook will use the first one found and ignore the others. Please remove the extra files.
+
+🔎 found a 'new-frameworks' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│   We've detected your project is not fully setup with Storybook's 7 new framework format.                                 │
+│                                                                                                                           │
+│   Storybook 7 introduced the concept of frameworks, which abstracts configuration for renderers (e.g. React, Vue),        │
+│   builders (e.g. Webpack, Vite) and defaults to make integrations easier.                                                 │
+│                                                                                                                           │
+│   Your project should be updated to use Storybook's framework: @storybook/react-webpack5. We can attempt to do this for   │
+│   you automatically.                                                                                                      │
+│                                                                                                                           │
+│   Here are the steps this migration will do to migrate your project:                                                      │
+│   - Remove the following dependencies:                                                                                    │
+│   - * @storybook/builder-webpack5                                                                                         │
+│   - * @storybook/manager-webpack5                                                                                         │
+│                                                                                                                           │
+│                                                                                                                           │
+│   To learn more about the new framework format, see:                                                                      │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#new-framework-api                                       │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'new-frameworks' migration on your project? › (Y/n)✔ Do you want to run the 'new-frameworks' migration on your project? … yes
+✅ Removing dependencies: @storybook/builder-webpack5, @storybook/manager-webpack5
+✅ Updating main.js
+✅ Updating "framework" field
+✅ ran new-frameworks migration
+
+🔎 found a 'eslintPlugin' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                              │
+│   We've detected you are not using our eslint-plugin.                                                        │
+│                                                                                                              │
+│   In order to have the best experience with Storybook and follow best practices, we advise you to install    │
+│   eslint-plugin-storybook.                                                                                   │
+│                                                                                                              │
+│   More info: https://github.com/storybookjs/eslint-plugin-storybook#readme                                   │
+│                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'eslintPlugin' migration on your project? › (Y/n)✔ Do you want to run the 'eslintPlugin' migration on your project? … yes
+✅ Adding dependencies: eslint-plugin-storybook
+    Configuring Storybook ESLint plugin at .eslintrc.cjs
+✅ ran eslintPlugin migration
+
+🔎 found a 'mdx1to2' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                  │
+│   We've found 1 '.stories.mdx' files in your project.                                                            │
+│                                                                                                                  │
+│   Storybook has upgraded to MDX2 (https://mdxjs.com/blog/v2/), which contains breaking changes from MDX1.        │
+│   We can try to automatically upgrade your MDX files to MDX2 format using some common patterns.                  │
+│                                                                                                                  │
+│   After this install completes, and before you start Storybook, we strongly recommend reading the MDX2 section   │
+│   of the 7.0 migration guide. It contains useful tools for detecting and fixing any remaining issues.            │
+│                                                                                                                  │
+│   https://storybook.js.org/migration-guides/7.0                                                                  │
+│                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'mdx1to2' migration on your project? › (Y/n)✔ Do you want to run the 'mdx1to2' migration on your project? … yes
+🆗 Unmodified Introduction.stories.mdx
+✅ ran mdx1to2 migration
+
+🔎 found a 'github-flavored-markdown-mdx' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│   In MDX1 you had the option of using GitHub flavored markdown.                                                           │
+│                                                                                                                           │
+│   Storybook 7.0 uses MDX2 for compiling MDX, and thus no longer supports GFM out of the box.                              │
+│   Because of this you need to explicitly add the GFM plugin in the addon-docs options:                                    │
+│   https://storybook.js.org/docs/react/writing-docs/mdx#lack-of-github-flavored-markdown-gfm                               │
+│                                                                                                                           │
+│   We recommend you follow the guide on the link above, however we can add a temporary storybook addon that helps make     │
+│   this migration easier.                                                                                                  │
+│   We'll install the addon and add it to your storybook config.                                                            │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'github-flavored-markdown-mdx' migration on your project? › (Y/n)✔ Do you want to run the 'github-flavored-markdown-mdx' migration on your project? … yes
+
+An error occurred while installing dependencies:
+NPM error ETARGET - Package target not found.
+
+Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+❌ error when running github-flavored-markdown-mdx migration
+HandledError: NPM error ETARGET - Package target not found.
+
+Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+    at NPMProxy.addDependencies (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:55:75)
+    at async Object.run (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:183:231)
+    ... 2 lines matching cause stack trace ...
+    at async Command.<anonymous> (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:474:2814) {
+  handled: true,
+  cause: Error: NPM error ETARGET - Package target not found.
+  
+  Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+      at NPMProxy.runAddDeps (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:57:7650)
+      at async NPMProxy.addDependencies (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:54:853)
+      at async Object.run (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:183:231)
+      at async runFixes (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:406:1144)
+      at async automigrate (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:401:676)
+      at async Command.<anonymous> (/Users/kojiroohara/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:474:2814)
+}
+
+
+╭ Migration check ran with failures ────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│   Successful migrations:                                                                                                  │
+│                                                                                                                           │
+│   new-frameworks, eslintPlugin, mdx1to2                                                                                   │
+│                                                                                                                           │
+│   Failed migrations:                                                                                                      │
+│                                                                                                                           │
+│   github-flavored-markdown-mdx:                                                                                           │
+│   NPM error ETARGET - Package target not found.                                                                           │
+│                                                                                                                           │
+│   Please check the logfile generated at ./storybook.log for troubleshooting and try again.                                │
+│                                                                                                                           │
+│   You can find the full logs in /Users/kojiroohara/Documents/jest/migration-storybook.log                                 │
+│                                                                                                                           │
+│   ─────────────────────────────────────────────────                                                                       │
+│                                                                                                                           │
+│   If you'd like to run the migrations again, you can do so by running 'npx storybook@next automigrate'                    │
+│                                                                                                                           │
+│   The automigrations try to migrate common patterns in your project, but might not contain everything needed to migrate   │
+│   to the latest version of Storybook.                                                                                     │
+│                                                                                                                           │
+│   Please check the changelog and migration guide for manual migrations and more information:                              │
+│   https://storybook.js.org/migration-guides/7.0                                                                           │
+│   And reach out on Discord if you need help: https://discord.gg/storybook                                                 │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
